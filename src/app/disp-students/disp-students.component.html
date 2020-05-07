@@ -1,0 +1,39 @@
+
+
+<h1>Search by name:</h1> <input type="text" [(ngModel)]= 'searchTerm' (input) = 'Search()' >
+<h1>Search by tag:</h1> <input type="text" [(ngModel)]= 'searchTagTerm' (input) = 'SearchTag()'>
+
+
+<div class = 'bottomcenter'>
+
+<div *ngFor='let student of filteredStudentList?.students; let i = index' [attr.data-index]="i">
+
+  <div class = "row">
+    
+    <div class = "column"><img src="{{student.pic}}"><br></div>
+      <div class="column">
+     <h1>{{ student.firstName}} {{student.lastName}} <button type = 'button' (click)= 'filteredStudentList.students[i].hidden = !filteredStudentList.students[i].hidden'>+</button> </h1> 
+          <body>
+            Email: {{student.email}} <br>
+  
+            Company: {{student.company}} <br>
+  
+            Skill: {{student.skill}} <br>
+  
+            Average: {{student.avgGrades}} <br>
+            
+           
+
+            <div [hidden]='!filteredStudentList.students[i].hidden'  *ngFor='let grade of student.grades'>
+              {{grade}}<br>
+              
+            </div>
+            <input type="text" (keydown.enter) = 'addTag($event.target.value, i)'><br>
+            <h3>Tags: </h3> <li *ngFor='let tag of student.tagsArray'>{{tag}}</li>
+
+
+       </body>
+      </div>
+  </div>
+</div>
+</div>

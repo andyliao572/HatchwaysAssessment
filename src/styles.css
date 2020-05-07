@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+.column {
+    float: left;
+    width: 30%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .centered {
+    width: 50vw;
+    height: 40vh;
+  
+    margin:  auto;
+    top: 50%;
+    overflow:auto
+    
+  }
+
+  img {
+    border-radius: 50%;
+    border: 1px solid #021a40;
+    width: 200px;
+    height: 200px;
+  }
+
+  .bottomcenter {
+    width: 90vh;
+    height: 70vh;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   overflow:auto;
+   border: 3px solid green;
+   border-radius: 25px;
+   padding-left: 50px;
+   padding-top: 50px;
+
+  }
+
+  .topcenter{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
